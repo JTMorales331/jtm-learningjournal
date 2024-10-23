@@ -1,8 +1,39 @@
+@import '/src/assets/styles/utils/variables.scss';
+
 h1 {
-  font-family: 'Roboto';
+  font-family: $font-family-sans;
   font-weight: bold;
+  font-size: 1.25rem;
+  color: $black-color;
 }
 
 a {
-  font-family: 'Source Sans 3', 'serif';
+  font-family: $font-family-serif;
+  font-size: 1rem;
+  color: $black-color;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.nav-item a {
+  display: inline-block;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  transform: scale(1.1)
+}
+
+.hamburger {
+  i {
+    font-size: 1.8rem;
+    color: $black-color;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+
+  i:hover, i:focus {
+    transform: scale(1.2)
+  }
 }
