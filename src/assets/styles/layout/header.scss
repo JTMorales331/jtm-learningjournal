@@ -1,0 +1,31 @@
+header {
+  border-bottom: 1px solid black;
+  padding: 1.75rem 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  align-items: center;
+
+  img {
+    width: 2rem;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  a {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
