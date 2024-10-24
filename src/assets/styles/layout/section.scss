@@ -2,6 +2,7 @@
 
 .about-intro {
   margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 .about-content {
@@ -14,5 +15,11 @@
 .recent-posts {
   h4 {
     text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .about-intro {
+    margin-top: 5rem;
   }
 }
