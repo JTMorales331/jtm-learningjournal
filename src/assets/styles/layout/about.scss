@@ -1,7 +1,13 @@
 @import '/src/assets/styles/utils/variables.scss';
 
+// about-intro
+
+.about-intro {
+  margin-bottom: 3rem;
+}
+
 .user-icon {
-  width: 10rem;
+  width: 40vw;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
@@ -15,8 +21,28 @@
   margin-right: 0.25rem;
 }
 
+
+// about-content
+
+.about-content {
+  margin-bottom: 2rem;
+}
+
+.about-content-card {
+  margin-top: 1rem;
+  
+  p {
+    margin-top: 1rem;
+  }
+}
+
 @media (min-width: 769px) {
 
+  .user-icon {
+    width: 22vw;
+
+  }
+  // about intro
   .about-user {
     flex-direction: row;
     gap: 1rem;
