@@ -1,6 +1,6 @@
 @import '/src/assets/styles/utils/variables.scss';
 
-h1 {
+h1, p, .text-logo, a, footer {
   color: $black-color;
 }
 
@@ -12,13 +12,11 @@ h1 {
 
 p {
   font-family: $font-serif;
-  color: $black-color;
 }
 
 a {
   font-family: $font-serif;
   font-size: 1rem;
-  color: $black-color;
   cursor: pointer;
   transform: scale(1);
   transition: transform 0.3s ease;
@@ -38,7 +36,6 @@ a:hover, a:focus {
 .hamburger {
   i {
     font-size: 1.3rem;
-    color: $black-color;
     transform: scale(1);
     transition: transform 0.3s ease;
   }
@@ -53,7 +50,7 @@ a:hover, a:focus {
 .about-descriptions {
   h1 {
     font-weight: 700;
-    padding-right: 1rem;
+    padding-right: 3rem;
   }
 
   p {
@@ -64,10 +61,10 @@ a:hover, a:focus {
 // footer
 
 footer {
-  color: $white-color;
   h6 {
     font-weight: 100;
   }
+  color: $white-color;
 }
 
 @media (min-width: 769px) {
@@ -81,4 +78,34 @@ footer {
       font-size: 1.8rem;
     }
   }
+
+  .about-descriptions {
+    h1 {
+      font-size: 1.7rem;
+      padding: 0;
+    }
+  
+    p {
+      margin-top: 0.75rem;
+    }
+  }
 }
+
+@media (prefers-color-scheme: light) {
+  h1, p, .text-logo, a {
+    color: $black-color;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  h1, p, .text-logo, a, footer {
+    color: $white-color;
+  }
+
+  .hamburger {
+    i {
+      color: $white-color;
+    }
+  }
+}
+

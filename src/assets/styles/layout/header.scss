@@ -32,6 +32,8 @@ nav {
   }
 }
 
+
+
 @media (max-width: 768px) {
   nav {
     display: none;
@@ -74,5 +76,11 @@ nav {
     img {
       width: 2rem;
     }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  header, nav {
+    background-color: $black-color2;
   }
 }

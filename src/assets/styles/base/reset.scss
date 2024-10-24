@@ -1,3 +1,5 @@
+@import '/src/assets/styles/utils/variables.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -15,4 +17,16 @@ button {
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: $white-color;
+  }
+}
+
+@media (prefer-color-scheme: dark) {
+  body {
+    background-color: $black-color;
+  }
 }

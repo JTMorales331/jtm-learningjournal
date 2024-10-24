@@ -3,7 +3,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  // color-scheme: light dark;
+  color-scheme: light dark;
 
   line-height: 1.2;
 
@@ -12,8 +12,4 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-}
-
-main {
-  background-color: $white-color;
 }
