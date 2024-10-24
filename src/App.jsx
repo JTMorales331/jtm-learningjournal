@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import About from './components/About/index'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
           </About.Intro>
         </About>
       </main>
+
+      <Footer />
     </>
   )
 }

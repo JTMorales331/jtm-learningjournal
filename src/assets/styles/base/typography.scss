@@ -24,6 +24,8 @@ a {
   transition: transform 0.3s ease;
 }
 
+// header
+
 .nav-item a {
   display: inline-block;
 }
@@ -56,6 +58,15 @@ a:hover, a:focus {
 
   p {
     margin-top: 0.75rem;
+  }
+}
+
+// footer
+
+footer {
+  color: $white-color;
+  h6 {
+    font-weight: 100;
   }
 }
 
