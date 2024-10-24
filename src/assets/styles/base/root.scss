@@ -1,10 +1,18 @@
+@import '/src/assets/styles/utils/variables.scss';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   // color-scheme: light dark;
 
+  line-height: 1.2;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  background-color: $white-color;
 }
