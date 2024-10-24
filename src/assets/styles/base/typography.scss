@@ -4,18 +4,20 @@ h1, p, .text-logo, a, footer {
   color: $black-color;
 }
 
-.text-logo {
+
+.text-logo,
+p,
+a,
+.blog-date {
   font-family: $font-serif;
+}
+
+.text-logo {
   font-size: 1rem;
   font-weight: 900;
 }
 
-p {
-  font-family: $font-serif;
-}
-
 a {
-  font-family: $font-serif;
   font-size: 1rem;
   cursor: pointer;
   transform: scale(1);
@@ -61,6 +63,9 @@ a:hover, a:focus {
 }
 
 // about content
+
+
+// blog posts
 
 // footer
 

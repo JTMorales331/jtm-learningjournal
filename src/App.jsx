@@ -2,7 +2,23 @@ import Header from './components/Header'
 import About from './components/About/index'
 import Footer from './components/Footer'
 
+import Blog from './components/Blog'
+import blogData from './data'
+
 function App() {
+
+  const blogs = blogData.map((blog, index) => {
+    return (
+      <Blog
+        key={index}
+        blogImg={blog.img}
+        blogDate={blog.date}
+        blogTitle={blog.title}
+      >
+        {blog.content}
+      </Blog>
+    )
+  })
 
   return (
     <>
@@ -29,6 +45,15 @@ function App() {
               I started out studying front-end development when I discovered "React" and how I like the color of the logo which is almost like the similar color as html tags. I am also more keen on creatives than purely logic which may have come from my music and audio background.
             </About.Content>
 
+          </section>
+
+          <section className='recent-posts'>
+            <div className='container'>
+              <h4>Recent Posts</h4>
+              <div className="blogs">
+                {blogs}
+              </div>
+            </div>
           </section>
         </About>
       </main>

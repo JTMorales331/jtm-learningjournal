@@ -1,0 +1,33 @@
+@import '/src/assets/styles/utils/variables.scss';
+
+.blogs {
+  margin-top: 1rem;
+}
+
+.blog-card {
+
+  margin-top: 1.5rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 5px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .blogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+}
