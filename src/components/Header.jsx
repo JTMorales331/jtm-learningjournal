@@ -1,8 +1,11 @@
-// import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 export default function Header() {
   const [ menuOpen, setMenuOpen ] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {setMenuOpen(false)},[location])
   
   function toggleMenu() {
     setMenuOpen(prev => !prev)
@@ -30,10 +33,10 @@ export default function Header() {
           aria-label="Main Navigation"
         >
           <div className="nav-item">
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </div>
           <div className="nav-item">
-            <a>About Me</a>
+            <Link to="/about">About Me</Link>
           </div>
         </nav>
       </div>
