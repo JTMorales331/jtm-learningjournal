@@ -18,18 +18,27 @@ function App() {
 
   const [blogs, setBlogs] = useState([])
 
+  const [latestBlog, setLatestBlog] = useState([])
+
   // fetches blog data using Posts/getBlogData()
   useEffect(() => {
     async function fetchData() {
       try{
         const data = await getBlogData()
         setBlogs(data.blogs)
+        setLatestBlog(data.blogs[data.blogs.length - 1])
       } catch (err) {
         console.error('Failed to fetch blogs: ', err)
       }
     }
     fetchData()
   }, [])
+
+  useEffect(() => {
+    console.log('blogs: ', blogs)
+    
+    console.log(latestBlog)
+  }, [blogs])
   
   return (
     <>
@@ -39,10 +48,16 @@ function App() {
         <Routes>
           
           {/* Home */}
-          <Route path='/' element={<Home blogsLayout={<BlogsLayout blogs={blogs}/>} />} />
+          <Route 
+            path='/' 
+            element={<Home latestBlog={latestBlog} blogsLayout={<BlogsLayout blogs={blogs}/>}  />} 
+          />
 
           {/* About */}
-          <Route path='/about' element={<About blogsLayout={<BlogsLayout blogs={blogs} />} />}/>
+          <Route
+            path='/about'
+            element={<About blogsLayout={<BlogsLayout blogs={blogs} />} />}
+          />
         </Routes>
       </main>
 
