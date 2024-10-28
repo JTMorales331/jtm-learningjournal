@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 
 import blogData from './data'
+import './server'
 
 // components
 import Header from './components/Header'
