@@ -1,18 +1,14 @@
-// components
-import BlogCard from "./BlogCard"
-
 export default function BlogsLayout({blogs}) {
 
   const blogComponents = blogs.map((blog) => {
     return (
-      <BlogCard
-        key={blog.id}
-        blogImg={blog.img}
-        blogDate={blog.date}
-        blogTitle={blog.title}
-      >
-        {blog.content}
-      </BlogCard>
+      <div className="blog-card" key={blog.id}>
+        <img src={blog.img} alt={`picture of ${blog.title}`} />
+
+        <div className="blog-date">{blog.date}</div>
+          <h3>{blog.title}</h3>
+          <p>{blog.content}</p>
+      </div>
     )
   })
 
