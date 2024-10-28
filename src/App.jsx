@@ -1,6 +1,10 @@
+// react shi
 import {Routes, Route} from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
-import blogData from './data'
+// Services
+import { getBlogData } from './services/Posts'
+
 import './server'
 
 // components
@@ -14,10 +18,25 @@ import Home from './Pages/Home'
 
 function App() {
 
-  const blogs = blogData.map((blog, index) => {
+  const [blogs, setBlogs] = useState([])
+
+  // fetches blog data using Posts/getBlogData()
+  useEffect(() => {
+    async function fetchData() {
+      try{
+        const data = await getBlogData()
+        setBlogs(data.blogs)
+      } catch (err) {
+        console.err('Failed to fetch blogs: ', err)
+      }
+    }
+    fetchData()
+  }, [])
+
+  const blogComponents = blogs.map((blog) => {
     return (
       <Blog
-        key={index}
+        key={blog.id}
         blogImg={blog.img}
         blogDate={blog.date}
         blogTitle={blog.title}
@@ -38,7 +57,7 @@ function App() {
           <Route path='/' element={<Home />} />
 
           {/* About */}
-          <Route path='/about' element={<About blogs={blogs}/>}/>
+          <Route path='/about' element={<About blogs={blogComponents} />}/>
         </Routes>
       </main>
 

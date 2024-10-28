@@ -48,7 +48,7 @@ createServer({
     ]
 
     // so that we won't have to type 'server.create()' for each one, just do foreach
-    blogData.foreach((post) => server.create('blog', post))
+    blogData.forEach((post) => server.create('blog', post))
   },
 
   routes() {
@@ -57,7 +57,7 @@ createServer({
 
     //Get all blog posts
     this.get('/blogs', (schema) => {
-      return schema.blog.all()
+      return schema.blogs.all()
     })
   }
 })
