@@ -1,27 +1,7 @@
-import { useEffect, useState } from 'react'
-
 // components
 import BlogCard from "./BlogCard"
 
-// Services
-import { getBlogData } from '../../services/Posts'
-
-export default function PostLayout() {
-
-  const [blogs, setBlogs] = useState([])
-
-  // fetches blog data using Posts/getBlogData()
-  useEffect(() => {
-    async function fetchData() {
-      try{
-        const data = await getBlogData()
-        setBlogs(data.blogs)
-      } catch (err) {
-        console.err('Failed to fetch blogs: ', err)
-      }
-    }
-    fetchData()
-  }, [])
+export default function BlogsLayout({blogs}) {
 
   const blogComponents = blogs.map((blog) => {
     return (

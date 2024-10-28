@@ -3,7 +3,7 @@
 import AboutIntro from "../components/About/AboutIntro";
 import AboutContent from "../components/About/AboutContent";
 
-export default function About({postLayout}) {
+export default function About({blogsLayout}) {
   
   return (
     <>
@@ -27,7 +27,7 @@ export default function About({postLayout}) {
         </AboutContent>
       </section>
 
-      {postLayout}
+      {blogsLayout}
       
     </>
   )
