@@ -3,7 +3,7 @@
 import AboutIntro from "../components/About/AboutIntro";
 import AboutContent from "../components/About/AboutContent";
 
-export default function About({blogs}) {
+export default function About({postLayout}) {
   
   return (
     <>
@@ -25,17 +25,10 @@ export default function About({blogs}) {
         >
           I started out studying front-end development when I discovered "React" and how I like the color of the logo which is almost like the similar color as html tags. I am also more keen on creatives than purely logic which may have come from my music and audio background.
         </AboutContent>
-
       </section>
 
-      <section className='recent-posts'>
-        <div className='container'>
-          <h4>Recent Posts</h4>
-          <div className="blogs">
-            {blogs}
-          </div>
-        </div>
-      </section>
+      {postLayout}
+      
     </>
   )
 }

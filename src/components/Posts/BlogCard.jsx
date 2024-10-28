@@ -1,4 +1,4 @@
-export default function Blog({ children, ...rest}) {
+export default function BlogCard({ children, ...rest}) {
   return (
     <div className="blog-card">
       <img src={rest.blogImg} alt={`picture of ${rest.blogImg}`} />
