@@ -28,6 +28,6 @@
 
 .section-home {
   position: relative;
-  height: 100vh;
-  z-index: 0;
+  max-width: 100%;
+  margin-bottom: 3.5rem;
 }

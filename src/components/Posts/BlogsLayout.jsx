@@ -6,8 +6,8 @@ export default function BlogsLayout({blogs}) {
         <img src={blog.img} alt={`picture of ${blog.title}`} />
 
         <div className="blog-date">{blog.date}</div>
-          <h3>{blog.title}</h3>
-          <p>{blog.content}</p>
+        <h3>{blog.title}</h3>
+        <p>{blog.content}</p>
       </div>
     )
   })

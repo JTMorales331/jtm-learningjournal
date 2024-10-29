@@ -3,18 +3,22 @@ export default function Home({latestBlog, blogsLayout}) {
   console.log(latestBlog)
 
   const postImg = {
-    backgroundImage: `url(${latestBlog.img})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8)), url(${latestBlog.img})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center top',
     backgroundRepeat: 'no-repeat',
-    height: '100%'
+    maxHeight: '100%',
+    paddingTop: '30%'
   }
   
   return (
     <>
       <section className="section-home" style={postImg}>
-        {/* <img src={latestBlog.img} /> */}
-        <div className="container">
-          <h1>Home Page</h1>
+        {/* <img className="featured-post-img" src={latestBlog.img} /> */}
+        <div className="container featured-post">
+          <div className="blog-date">{latestBlog.date}</div>
+          <h2>{latestBlog.title}</h2>
+          <p>{latestBlog.content}</p>
         </div>
       </section>
 
