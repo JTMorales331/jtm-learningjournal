@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Home({latestBlog, blogsLayout}) {
 
   console.log(latestBlog)
@@ -13,14 +15,16 @@ export default function Home({latestBlog, blogsLayout}) {
   
   return (
     <>
-      <section className="section-home" style={postImg}>
-        {/* <img className="featured-post-img" src={latestBlog.img} /> */}
-        <div className="container featured-post">
-          <div className="blog-date">{latestBlog.date}</div>
-          <h2>{latestBlog.title}</h2>
-          <p>{latestBlog.content}</p>
-        </div>
-      </section>
+      <Link to={`/post/${latestBlog.id}`}>
+        <section className="section-home" style={postImg}>
+          {/* <img className="featured-post-img" src={latestBlog.img} /> */}
+          <div className="container featured-post">
+              <div className="blog-date">{latestBlog.date}</div>
+              <h2>{latestBlog.title}</h2>
+              <p>{latestBlog.content}</p>
+          </div>
+        </section>
+      </Link>
 
       {blogsLayout}
     </>

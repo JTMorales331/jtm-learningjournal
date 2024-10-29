@@ -15,7 +15,7 @@ export default function Header() {
     <header>
       <div className="container">
         <div className="logo">
-          <img src="images/logo.png" alt="logo of site" />
+          <img src="../../public/images/logo.png" alt="logo of site" />
           <h1 className="text-logo">My learning journal</h1>
         </div>
 

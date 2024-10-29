@@ -11,7 +11,8 @@ import About from './Pages/About'
 import Home from './Pages/Home'
 
 // Services
-import {getBlogData} from './services/Posts'
+import {getBlogsData} from './services/Posts'
+import PostDetail from './Pages/PostDetail'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try{
-        const data = await getBlogData()
+        const data = await getBlogsData()
         setBlogs(data.blogs)
         setLatestBlog(data.blogs[data.blogs.length - 1])
       } catch (err) {
@@ -33,11 +34,6 @@ function App() {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    console.log('blogs: ', blogs)
-    
-    console.log(latestBlog)
-  }, [blogs])
   
   return (
     <>
@@ -49,6 +45,12 @@ function App() {
           <Route 
             index
             element={<Home latestBlog={latestBlog} blogsLayout={<BlogsLayout blogs={blogs}/>}  />} 
+          />
+
+          {/* Post Detail */}
+          <Route 
+            path="/post/:id"
+            element={<PostDetail />}
           />
 
           {/* About */}

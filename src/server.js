@@ -59,5 +59,10 @@ createServer({
     this.get('/blogs', (schema) => {
       return schema.blogs.all()
     })
+
+    this.get('/blogs/:id', (schema, request) => {
+      const id = request.params.id
+      return schema.blogs.find(id)
+    })
   }
 })
