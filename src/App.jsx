@@ -3,9 +3,8 @@ import {Routes, Route} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 // components
-import Header from './components/Header'
-import Footer from './components/Footer'
 import BlogsLayout from './components/Posts/BlogsLayout'
+import BaseLayout from './components/Layouts/BaseLayout'
 
 // Pages
 import About from './Pages/About'
@@ -42,14 +41,13 @@ function App() {
   
   return (
     <>
-      <Header />
-      
-      <main>
-        <Routes>
+      <Routes>
+        <Route path='/' element={<BaseLayout />}>
+        
           
           {/* Home */}
           <Route 
-            path='/' 
+            index
             element={<Home latestBlog={latestBlog} blogsLayout={<BlogsLayout blogs={blogs}/>}  />} 
           />
 
@@ -58,10 +56,8 @@ function App() {
             path='/about'
             element={<About blogsLayout={<BlogsLayout blogs={blogs} />} />}
           />
-        </Routes>
-      </main>
-
-      <Footer />
+        </Route>
+      </Routes>
     </>
   )
 }
