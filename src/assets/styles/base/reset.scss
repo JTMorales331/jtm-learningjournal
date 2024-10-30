@@ -14,6 +14,13 @@ body, html {
   // flex-direction: column;
 }
 
+// drops the footer to the outmost bottom, maximizing the viewport height
+.content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 // resets buttons
 button {
   background: none;
