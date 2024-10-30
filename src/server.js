@@ -60,6 +60,7 @@ createServer({
       return schema.blogs.all()
     })
 
+    // get specific blog post
     this.get('/blogs/:id', (schema, request) => {
       const id = request.params.id
       return schema.blogs.find(id)

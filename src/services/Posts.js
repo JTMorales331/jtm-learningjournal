@@ -7,6 +7,7 @@ export async function getBlogsData() {
   return res.data
 }
 
+// get specific blog post
 export async function getBlogData(id) {
   const res = await axios.get(`/api/blogs/${id}`)
   return res.data

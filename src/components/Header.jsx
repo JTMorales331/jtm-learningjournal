@@ -2,11 +2,19 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 export default function Header() {
+
+  // menuOpen for opening the nav menu
   const [ menuOpen, setMenuOpen ] = useState(false)
+
+  // useLocation() sets the current location, just used as a dependency
   const location = useLocation()
 
+
+  // if location has changed, then menuOpen will be false
   useEffect(() => {setMenuOpen(false)},[location])
   
+
+  // toggle menuOpen
   function toggleMenu() {
     setMenuOpen(prev => !prev)
     return console.log(menuOpen)

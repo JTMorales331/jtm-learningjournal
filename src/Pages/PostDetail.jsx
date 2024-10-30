@@ -6,10 +6,12 @@ import {getBlogData} from '../services/Posts'
 
 export default function PostDetail() {
 
+  // :id gets into params
   const params = useParams()
 
   const [currentBlog, setCurrentBlog] = useState(null)
 
+  // uses getBlogData(id) service to fetch certain blog data. stores in currentBlog
   useEffect(() => {
     async function fetchData() {
       try{

@@ -16,11 +16,13 @@ import PostDetail from './Pages/PostDetail'
 
 function App() {
 
+  // all blogs from fetchData gets stored here
   const [blogs, setBlogs] = useState([])
 
+  // to feature latestBlog on home page idk if I should transfer it to Home page
   const [latestBlog, setLatestBlog] = useState([])
 
-  // fetches blog data using Posts/getBlogData()
+  // fetches blog data using Posts/getBlogsData()
   useEffect(() => {
     async function fetchData() {
       try{

@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom'
 
 export default function BlogsLayout({blogs}) {
 
+  // all blogs to be mapped and shown below
   const blogComponents = blogs.map((blog) => {
     return (
       <div className="blog-card" key={blog.id}>
