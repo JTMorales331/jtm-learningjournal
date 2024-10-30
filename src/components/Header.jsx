@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 export default function Header() {
@@ -33,10 +33,10 @@ export default function Header() {
           aria-label="Main Navigation"
         >
           <div className="nav-item">
-            <Link to="/">Home</Link>
+            <NavLink className={({isActive}) => isActive ? 'active-link' : null} to="/">Home</NavLink>
           </div>
           <div className="nav-item">
-            <Link to="/about">About Me</Link>
+            <NavLink className={({isActive}) => isActive ? 'active-link' : null} to="/about">About Me</NavLink>
           </div>
         </nav>
       </div>
