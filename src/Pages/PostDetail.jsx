@@ -26,15 +26,24 @@ export default function PostDetail() {
   }, [params.id])
 
   return (
-    <section className="post-detail">
-      <div className="container">
+    <section className="section-post-detail">
         { currentBlog ? (
-          <h1>{currentBlog.title}</h1>
+          <div className="container">
+            <div className="post-content-wrapper">
+              <div className="blog-date">{currentBlog.date}</div>
+              <h1>{currentBlog.title}</h1>
+              <p>{currentBlog.content}</p>
+            </div>
+            <div className="img-wrapper">
+              <img className="featured-post-img" src={currentBlog.img} />
+            </div>
+          </div>
           ) : (
-            <h1>Page Loading...</h1>
+            <div className="container">
+              <h1>Page Loading...</h1>
+            </div>
           )
         }
-      </div>
     </section>
   )
 }
