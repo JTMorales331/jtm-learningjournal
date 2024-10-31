@@ -25,14 +25,17 @@ a {
   transition: transform 0.3s ease;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 // header
 
 .nav-item a {
   display: inline-block;
 }
 
-a:hover {
-  text-decoration: underline;
+.nav-item > a:hover {
   transform: scale(1.1)
 }
 
@@ -126,6 +129,17 @@ footer {
 @media (prefers-color-scheme: light) {
   h1, p, .text-logo, a {
     color: $black-color;
+  }
+
+  .featured-post,
+  .featured-post > p,
+  .featured-post > a {
+    color: $white-color;
+  }
+
+  .featured-post:hover {
+    text-decoration: underline;
+    text-decoration-color: $white-color;
   }
 }
 
