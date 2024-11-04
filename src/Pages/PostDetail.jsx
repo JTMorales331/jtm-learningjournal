@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 // Services
 import {getBlogData} from '../services/Posts'
 
-export default function PostDetail() {
+export default function PostDetail({blogComponents}) {
 
   // :id gets into params
   const params = useParams()
@@ -37,6 +37,9 @@ export default function PostDetail() {
             <div className="img-wrapper">
               <img className="featured-post-img" src={currentBlog.img} />
             </div>
+            <div className="blogs">
+            {blogComponents}
+          </div>
           </div>
           ) : (
             <div className="container">

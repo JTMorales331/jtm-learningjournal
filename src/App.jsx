@@ -1,5 +1,5 @@
 // react shi
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Link} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 // components
@@ -36,6 +36,23 @@ function App() {
     fetchData()
   }, [])
 
+
+  // all blogs to be mapped and shown below
+  const blogComponents = blogs.map((blog) => {
+    return (
+      <div className="blog-card" key={blog.id}>
+        <Link to={`/post/${blog.id}`}>
+          <img src={blog.img} alt={`picture of ${blog.title}`} />
+
+          <div className="blog-date">{blog.date}</div>
+          <h3>{blog.title}</h3>
+          <p>{blog.content}</p>
+        
+        </Link>
+      </div>
+    )
+  })
+
   
   return (
     <>
@@ -46,13 +63,13 @@ function App() {
           {/* Home */}
           <Route 
             index
-            element={<Home latestBlog={latestBlog} blogsLayout={<BlogsLayout blogs={blogs}/>}  />} 
+            element={<Home latestBlog={latestBlog} blogsLayout={<BlogsLayout blogComponents={blogComponents}/>}  />} 
           />
 
           {/* Post Detail */}
           <Route 
             path="/post/:id"
-            element={<PostDetail />}
+            element={<PostDetail blogComponents={blogComponents} />}
           />
 
           {/* About */}
